@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<center>
+    <h1>Jogo de Adivinhação</h1>
+</center>
+</head>
+<body>
+    <script>
+        //math.floor arrendonda
+        let numeroPensado = Math.floor(Math.random() * 10);
+
+        let palpite = prompt("Eu pensei em um número entre 0 e 9. Qual número você acha que eu pensei?");
+
+        // O $ mostra aexpressão da string e o *alert* mostra uma mensgaem no prompt
+        if (palpite == numeroPensado) {
+            alert(`Parabéns! O número que eu pensei foi ${numeroPensado}.`);
+        } else {
+            alert(`Você perdeu bobão! O número que eu pensei foi ${numeroPensado}.`);
+            alert(`Recarregue a página para tentar novamente👍`);
+        }
+    </script>
+
+</body>
+</html>
