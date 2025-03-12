@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula e analisa IMC</title>
+</head>
+
+<body>
+    <script>
+        //PaseFloat ele tenta interpretar a string como um número com decimais.
+        //imc >= 18.5: Verifica se o valor de imc é maior ou igual a 18.5.
+        //imc <= 35: Verifica se o valor de imc é menor ou igual a 35.
+        //&&: É o operador lógico "E" (AND), que significa que ambas as condições;
+        // precisam ser verdadeiras para que a condição completa seja verdadeira.
+        let peso = parseFloat(prompt("Digite seu peso em kg:"));
+        let altura = parseFloat(prompt("Digite sua altura em metros:"));
+        let imc = peso / (altura * altura);
+
+        if (imc >= 18.5 && imc <= 35) {
+            alert(`Parabéns! Seu IMC é ${imc.toFixed(2)}.`);
+        } else if (imc < 18.5) {
+            alert("Seu IMC indica que você está abaixo do peso!");
+        } else {
+            alert("Seu IMC indica que você está acima do peso!");
+        }
+
+    </script>
+</body>
+
+</html>
