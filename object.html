@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+
+<body>
+    <h1>Cadastro de Alunos</h1>
+
+    <button id="cadastrar">Cadastrar Aluno</button>
+    <button id="remover">Remover Último Aluno</button>
+
+    <h2>Alunos Cadastrados:</h2>
+    <output id="alunosCadastrados"></output>
+
+    <script>
+        let alunos = [];
+        function exibirAlunos() {
+            let output = document.getElementById('alunosCadastrados');
+            output.innerHTML = '';
+            for (let i = 0; i < alunos.length; i++) {
+                output.innerHTML += `<p>O(a) aluno(a) ${alunos[i].nome} tem ${alunos[i].idade} anos e é do SESI ${alunos[i].sesi}. ${alunos[i].temPet ? "Tem pet." : "Não tem pet."}</p>`;
+            }
+        }
+
+
+        document.getElementById('cadastrar').onclick = function () {
+            let continuar = true;
+            while (continuar) {
+                let nome = prompt('Digite o nome do aluno:');
+                let idade = prompt('Digite a idade do aluno:');
+                let sesi = prompt('Digite o nome do SESI:');
+                let temPet = confirm('O aluno tem pet?');
+
+                alunos.push({
+                    nome: nome,
+                    idade: parseInt(idade),
+                    sesi: sesi,
+                    temPet: temPet
+                });
+
+                continuar = confirm('Deseja cadastrar outro aluno?');
+                exibirAlunos();
+            }
+        };
+
+
+        document.getElementById('remover').onclick = function () {
+            alunos.pop();
+            exibirAlunos();
+        };
+
+    </script>
+</body>
+
+</html>
